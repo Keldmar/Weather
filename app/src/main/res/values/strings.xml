@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string-array name="citylist">
+        <item></item>
+        <item>Poltava</item>
+        <item>Kharkiv</item>
+        <item>Kiev</item>
+    </string-array>
+    <string name="informatoin">Температура %1$.0f\nСкорость ветра %2$.1f\nДавление %3$.0f\nВлажность %4$.0f%%</string>
+
+</resources>
