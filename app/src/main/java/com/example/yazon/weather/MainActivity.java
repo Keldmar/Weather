@@ -4,22 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.yazon.weather.answer.GetWeather;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.example.yazon.weather.responseWeather.GetWeather;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,36 +23,28 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     private Spinner spiner;
 
-    private final String URL = "http://api.openweathermap.org/data/2.5/";
-    private final String KEY = "2b8b3f601dcf71d14beba9c2ce7b2cb5";
-
-    private Gson gson = new GsonBuilder().create();
-    private Retrofit retrofit;
-    Openweathermap service;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(logging);
-
-        retrofit = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .baseUrl(URL)
-                .client(httpClient.build())
-                .build();
-
-        service = retrofit.create(Openweathermap.class);
-
         setContentView(R.layout.activity_main);
         text = (EditText) findViewById(R.id.editText);
         button = (Button) findViewById(R.id.batton);
         spiner = (Spinner) findViewById(R.id.spiner);
+        spiner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                TextView view1 = (TextView) view;
+                text.setText(view1.getText());
+                view1.setText(null);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     public void onClickListener(View view) {
@@ -69,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
             name = selected;
             text.setText(selected);
         }
-        Call<GetWeather> call = service.tmp(name, KEY);
-        call.enqueue(new Callback<GetWeather>() {
+
+        WeatherApplication.getApiManager().getweather(name).enqueue(new Callback<GetWeather>() {
             @Override
             public void onResponse(Call<GetWeather> call, Response<GetWeather> response) {
                 GetWeather weather = response.body();

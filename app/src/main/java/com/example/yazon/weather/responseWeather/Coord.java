@@ -1,4 +1,4 @@
-package com.example.yazon.weather.answer;
+package com.example.yazon.weather.responseWeather;
 
 import java.io.Serializable;
 

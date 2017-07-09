@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yazon.weather.MainActivity">
+    android:background="@drawable/test"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <RelativeLayout
+
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spiner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:entries="@array/citylist" />
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:ems="10"
-            android:hint="Enter the name of the city"
-            android:inputType="textPersonName" />
+            android:hint="@string/enter_city_name"
+            android:inputType="textPersonName"
+            android:padding="16dp" />
 
-        <Button
-            android:id="@+id/batton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editText"
-            android:layout_centerHorizontal="true"
-            android:onClick="onClickListener"
-            android:text="discover" />
+    </FrameLayout>
 
-        <Spinner
-            android:id="@+id/spiner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/editText"
-            android:entries="@array/citylist">
-        </Spinner>
-    </RelativeLayout>
-</RelativeLayout>
+    <Button
+        android:id="@+id/batton"
+        android:background="@color/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickListener"
+        android:text="discover" />
+
+</LinearLayout>
