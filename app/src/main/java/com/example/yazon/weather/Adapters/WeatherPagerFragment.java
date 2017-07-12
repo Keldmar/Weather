@@ -36,7 +36,6 @@ public class WeatherPagerFragment extends Fragment {
             WeatherForOneDay weatherForOneDay = (WeatherForOneDay) bundle.getSerializable("key");
             NormalRecyclerViewAdapter normalRecyclerViewAdapter = new NormalRecyclerViewAdapter(weatherForOneDay.weatherForThreeHoursList);
             recyclerview.setAdapter(normalRecyclerViewAdapter);
-//            textView.setText(weatherForOneDay.toString());
         }
     }
 

@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorPrimaryLight">#B2EBF2</color>
+    <color name="colorAccent">#009688</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorDivider">#BDBDBD</color>
+
     <color name="maincolor">#b085f5</color>
     <color name="button">#80DEEA</color>
     <color name="fon_pod_itam">#B3E5FC</color>
+
+    <color name="fon_item">#F0FFF0</color>
+
+    <color name="morning">#FFE7BA</color>
+    <color name="day">#DEB887</color>
+    <color name="evening">#A0522D</color>
+    <color name="nights">#8B4513</color>
 </resources>

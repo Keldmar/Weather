@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class WeatherPagerAdapter extends FragmentPagerAdapter {
@@ -27,6 +29,8 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return "hui      " + String.valueOf(position);
+        Date date = new Date(listeds.get(position).weatherForThreeHoursList.get(position).dt * 1000);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM");
+        return sdf.format(date);
     }
 }

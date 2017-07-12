@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<GetWeather> call, Response<GetWeather> response) {
                 GetWeather weather = response.body();
                 if (response.code() / 100 != 2) {
-                    Toast.makeText(getApplicationContext(), "Данного города не существует", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.city_not_exist, Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(MainActivity.this, InformationActivity.class);
                     intent.putExtra("temp", weather);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<GetWeather> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Нет ответа от сервера", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.no_response_from_server, Toast.LENGTH_SHORT).show();
             }
         });
     }

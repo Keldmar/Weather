@@ -17,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InformationActivity"></activity>
+        <activity android:name=".InformationActivity"
+            android:theme="@style/TranslucentActivity"/>
+
         <activity android:name=".ShowForecastActivity"></activity>
         <activity android:name=".NormalForecastActivity"></activity>
     </application>
