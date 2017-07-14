@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="information">Вологість %1$.0f%%\nТиск %2$.0f гПа\nШвидкість вітру %3$.0f м/с</string>
+    <string name="text_mainTemperature">%1$.0f%2$</string>
+    <string name="enter_city_name">Введіть місто</string>
+    <string name="extended_forecast">Показати прогноз</string>
+    <string name="city_not_exist">Данного міста не існує</string>
+    <string name="no_response_from_server">Немає відповіді від сервера, перевірте підключення до Інтернету</string>
+    <string name="discover">Пошук</string>
+</resources>

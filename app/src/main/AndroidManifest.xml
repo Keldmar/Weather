@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.yazon.weather">
+    package="com.yahnenko.app.weather">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="WeatherApplication"
+        android:name="com.yahnenko.app.weather.WeatherApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.yahnenko.app.weather.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InformationActivity"
+        <activity android:name="com.yahnenko.app.weather.InformationActivity"
             android:theme="@style/TranslucentActivity"/>
 
-        <activity android:name=".ShowForecastActivity"></activity>
-        <activity android:name=".NormalForecastActivity"></activity>
+        <activity android:name="com.yahnenko.app.weather.ShowForecastActivity"></activity>
+        <activity android:name="com.yahnenko.app.weather.NormalForecastActivity"></activity>
     </application>
 </manifest>

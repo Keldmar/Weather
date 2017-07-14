@@ -31,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15"
+                android:textColor="@color/black"
                 android:textSize="60sp" />
 
             <ImageView
@@ -54,11 +55,11 @@
 
                 <TextView
                     android:id="@+id/humidity"
-                    android:drawableTop="@drawable/hygrometer24"
-                    style="@style/huy"
+                    style="@style/beforeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/hygrometer24" />
 
                 <View style="@style/VerticalDivider" />
             </LinearLayout>
@@ -70,11 +71,11 @@
 
                 <TextView
                     android:id="@+id/pressure"
-                    android:drawableTop="@drawable/pressure24"
-                    style="@style/huy"
+                    style="@style/beforeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pressure24" />
             </LinearLayout>
 
             <LinearLayout
@@ -86,11 +87,11 @@
 
                 <TextView
                     android:id="@+id/speed"
-                    android:drawableTop="@drawable/air24"
-                    style="@style/huy"
+                    style="@style/beforeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/air24" />
             </LinearLayout>
 
         </LinearLayout>
@@ -101,11 +102,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="16dp"
+
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center"
+            android:background="@color/trasparentLayout"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -117,16 +127,28 @@
                 android:id="@+id/data_second_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                tools:text="huihuihui"
                 android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/temp_second_day"
                 android:layout_width="wrap_content"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center"
+            android:background="@color/trasparentLayout"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -136,6 +158,7 @@
 
             <TextView
                 android:id="@+id/data_three_day"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -143,11 +166,21 @@
             <TextView
                 android:id="@+id/temp_three_day"
                 android:layout_width="wrap_content"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center"
+            android:background="@color/trasparentLayout"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -158,12 +191,14 @@
             <TextView
                 android:id="@+id/data_forth_day"
                 android:layout_width="wrap_content"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/temp_forth_day"
                 android:layout_width="wrap_content"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -171,6 +206,12 @@
             android:id="@+id/normal_show"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="16dp"
             android:layout_gravity="center_horizontal"
             android:text="@string/extended_forecast" />
     </LinearLayout>

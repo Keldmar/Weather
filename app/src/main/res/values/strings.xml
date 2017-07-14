@@ -6,11 +6,12 @@
         <item>Kharkiv</item>
         <item>Kiev</item>
     </string-array>
-    <string name="information">Humidity %1$.0f\nPressure %2$.0f\nWind speed %3$.0f</string>
+    <string name="information">Humidity %1$.0f%%\nPressure %2$.0f hpa\nWind speed %3$.0f m/s</string>
     <string name="text_mainTemperature">%1$.0f%2$</string>
     <string name="enter_city_name">Enter city name</string>
     <string name="extended_forecast">Extended forecast</string>
     <string name="city_not_exist">This city does not exist</string>
     <string name="no_response_from_server">No response from the server, check the Internet connection</string>
+    <string name="discover">discover</string>
 
 </resources>

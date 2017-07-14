@@ -15,8 +15,12 @@
 
     <color name="fon_item">#F0FFF0</color>
 
-    <color name="morning">#FFE7BA</color>
-    <color name="day">#DEB887</color>
-    <color name="evening">#A0522D</color>
-    <color name="nights">#8B4513</color>
+    <color name="morning">#c0ffe7ba</color>
+    <color name="day">#c0deb887</color>
+    <color name="evening">#c0a0522d</color>
+    <color name="nights">#c08b4513</color>
+    
+    <color name="trasparentLayout">#4dffffff</color>
+
+    <color name="black">#000000</color>
 </resources>
