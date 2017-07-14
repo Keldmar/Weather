@@ -108,7 +108,7 @@ public class InformationActivity extends AppCompatActivity {
                     String image = getImageDay(weatherForOneDay);
 
                     Date date = new Date(threehoursMinMax.dt * 1000);
-                    SimpleDateFormat sdf = new SimpleDateFormat("EEEE dd-MM");
+                    SimpleDateFormat sdf = new SimpleDateFormat("EEE, d - MMMM");
                     maxTemp = threehoursMinMax.main.temp;
                     minTemp = threehoursMinMax.main.temp;
                     for (int j = 0; j < weatherForOneDay.weatherForThreeHoursList.size(); j++) {
@@ -127,7 +127,7 @@ public class InformationActivity extends AppCompatActivity {
                                 .load(uri)
                                 .into(imageSecondDay);
                         dataSecondDay.setText(sdf.format(date));
-                        tempSecondDay.setText(Float.toString(Math.round(minTemp - KELVIN_EQUIVALENT)) + "° - " + Float.toString(Math.round(maxTemp - KELVIN_EQUIVALENT))+"°");
+                        tempSecondDay.setText((String.format("%.0f",minTemp - KELVIN_EQUIVALENT)) + "° - " + String.format("%.0f",maxTemp - KELVIN_EQUIVALENT)+"°");
                     } else {
                         if (i == THREE_DAY) {
                             Uri uri = Uri.parse("http://openweathermap.org/img/w/" + image + ".png");
@@ -136,7 +136,7 @@ public class InformationActivity extends AppCompatActivity {
                                     .load(uri)
                                     .into(imageThreeDay);
                             dataThreeDay.setText(sdf.format(date));
-                            tempThreeDay.setText(Float.toString(Math.round(minTemp - KELVIN_EQUIVALENT)) + "° - " + Float.toString(Math.round(maxTemp - KELVIN_EQUIVALENT))+"°");
+                            tempThreeDay.setText((String.format("%.0f",minTemp - KELVIN_EQUIVALENT)) + "° - " + String.format("%.0f",maxTemp - KELVIN_EQUIVALENT)+"°");
                         } else {
                             if (i == WEATHER_FORTH_DAY) {
                                 Uri uri = Uri.parse("http://openweathermap.org/img/w/" + image + ".png");
@@ -145,7 +145,7 @@ public class InformationActivity extends AppCompatActivity {
                                         .load(uri)
                                         .into(imageForthDay);
                                 dataForthDay.setText(sdf.format(date));
-                                tempForthDay.setText(Float.toString(Math.round(minTemp - KELVIN_EQUIVALENT)) + "° - " + Float.toString(Math.round(maxTemp - KELVIN_EQUIVALENT))+"°");
+                                tempForthDay.setText((String.format("%.0f",minTemp - KELVIN_EQUIVALENT)) + "° - " + String.format("%.0f",maxTemp - KELVIN_EQUIVALENT)+"°");
                             }
                         }
                     }
