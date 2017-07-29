@@ -56,6 +56,9 @@ public class InformationActivity extends AppCompatActivity {
         TextView textPressure = (TextView) findViewById(R.id.pressure);
         TextView textspeed = (TextView) findViewById(R.id.speed);
 
+        TextView sunrise = (TextView) findViewById(R.id.sunrise);
+        TextView sunset = (TextView) findViewById(R.id.sunset);
+
         final TextView tempSecondDay = (TextView) findViewById(R.id.temp_second_day);
         final TextView tempThreeDay = (TextView) findViewById(R.id.temp_three_day);
         final TextView tempForthDay = (TextView) findViewById(R.id.temp_forth_day);
@@ -90,6 +93,12 @@ public class InformationActivity extends AppCompatActivity {
         textspeed.setText(String.format("%.0f", weather.wind.speed) + "m/s");
         textPressure.setText(String.format("%.0f", weather.main.pressure) + "hpa");
 
+        Date dateSunrise = new Date(weather.sys.sunrise * 1000);
+        Date dateSunset = new Date(weather.sys.sunset * 1000);
+        SimpleDateFormat sdfSun = new SimpleDateFormat("HH:mm:ss");
+        sunrise.setText(sdfSun.format(dateSunrise));
+        sunset.setText(sdfSun.format(dateSunset));
+
         WeatherApplication.getApiManager().forecast(weather.name).enqueue(new Callback<Forecast>() {
             @Override
             public void onResponse(Call<Forecast> call, Response<Forecast> response) {
@@ -99,7 +108,6 @@ public class InformationActivity extends AppCompatActivity {
 
                 resurseImage = getBackgroundByDate(listForThreeHours.get(0).dt);
                 rootLayout.setBackgroundResource(resurseImage);
-//                rootLayout.setBackground(ContextCompat.getDrawable(InformationActivity.this, BackgroundUtil.getBackgroundByDate(listForThreeHours)));
 
                 for (int i = SECOND_DAY; i < FORTH_DAY; i++) {
                     WeatherForOneDay weatherForOneDay = onedayList.get(i);

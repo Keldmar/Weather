@@ -2,10 +2,6 @@ package com.yahnenko.app.weather.prefs;
 
 import android.content.SharedPreferences;
 
-/**
- * Created by Yazon on 14.07.2017.
- */
-
 public class PreferencesManager {
     private static final String KEY_CITY = "KEY_CITY";
 
