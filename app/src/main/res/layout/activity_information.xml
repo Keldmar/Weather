@@ -115,13 +115,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/sunrise24"
+
                 tools:text="text" />
 
             <TextView
                 android:id="@+id/sunset"
                 style="@style/beforeText"
-                android:drawableTop="@drawable/sunset24"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

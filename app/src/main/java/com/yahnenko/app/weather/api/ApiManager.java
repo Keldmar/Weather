@@ -1,10 +1,15 @@
 package com.yahnenko.app.weather.api;
 
+import com.google.gson.GsonBuilder;
 import com.yahnenko.app.weather.Openweathermap;
 import com.yahnenko.app.weather.response.forecast.Forecast;
 import com.yahnenko.app.weather.response.weather.GetWeather;
-import com.google.gson.GsonBuilder;
 
+import java.io.IOException;
+import java.util.Locale;
+
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
