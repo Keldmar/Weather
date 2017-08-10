@@ -25,6 +25,7 @@ public class ViewHolderForThree extends RecyclerView.ViewHolder {
     private ImageView icon;
     private TextView otherInfo;
     private CardView linearLayout;
+    private TextView descriptionThreeHours;
 
     public ViewHolderForThree(View itemView) {
         super(itemView);
@@ -33,6 +34,7 @@ public class ViewHolderForThree extends RecyclerView.ViewHolder {
         icon = (ImageView) itemView.findViewById(R.id.image_item);
         otherInfo = (TextView)itemView.findViewById(R.id.other_info);
         linearLayout = (CardView) itemView.findViewById(R.id.rootLayout);
+        descriptionThreeHours = (TextView)itemView.findViewById(R.id.description_forThreeHours);
     }
 
     public void bindData(WeatherForThreeHours listed) {
@@ -55,6 +57,7 @@ public class ViewHolderForThree extends RecyclerView.ViewHolder {
         }
 
         data.setText(sdf.format(date));
+        descriptionThreeHours.setText(listed.weather.get(0).description);
         temp.setText(String.format("%.0f", listed.main.temp - 273.15f) + "°");
         otherInfo.setText(itemView.getContext().getString(R.string.information,
                 listed.main.humidity,

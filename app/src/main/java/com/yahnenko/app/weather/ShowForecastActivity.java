@@ -12,9 +12,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Yazon on 05.07.2017.
- */
+
 
 public class ShowForecastActivity extends AppCompatActivity {
     @Override

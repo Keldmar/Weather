@@ -13,16 +13,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yahnenko.app.weather.util.WeatherConverter;
 import com.yahnenko.app.weather.adapters.WeatherForOneDay;
 import com.yahnenko.app.weather.response.forecast.Forecast;
 import com.yahnenko.app.weather.response.forecast.WeatherForThreeHours;
 import com.yahnenko.app.weather.response.weather.GetWeather;
+import com.yahnenko.app.weather.util.WeatherConverter;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -43,6 +44,8 @@ public class InformationActivity extends AppCompatActivity {
     private LinearLayout rootLayout;
     private int resurseImage;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,7 @@ public class InformationActivity extends AppCompatActivity {
         Button button2 = (Button) findViewById(R.id.normal_show);
 
         TextView mainTemperature = (TextView) findViewById(R.id.temperatura);
+        TextView description = (TextView) findViewById(R.id.description);
         TextView textHumidity = (TextView) findViewById(R.id.humidity);
         TextView textPressure = (TextView) findViewById(R.id.pressure);
         TextView textspeed = (TextView) findViewById(R.id.speed);
@@ -70,8 +74,12 @@ public class InformationActivity extends AppCompatActivity {
 
         rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
 
+        String language = null;
+        language = Locale.getDefault().getLanguage();
 
         final GetWeather weather = (GetWeather) getIntent().getExtras().getSerializable("temp");
+
+        description.setText(weather.weather.get(0).description);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

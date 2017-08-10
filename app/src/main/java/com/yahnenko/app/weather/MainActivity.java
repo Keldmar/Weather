@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.yahnenko.app.weather.response.weather.GetWeather;
@@ -18,7 +17,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private EditText cityEditText;
     private Button button;
-    private Spinner spiner;
+
 
 
     @Override

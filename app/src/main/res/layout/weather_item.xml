@@ -14,13 +14,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
             android:paddingEnd="16dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:gravity="center">
+            android:paddingStart="16dp"
+            android:paddingTop="4dp">
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -29,11 +29,11 @@
                 <TextView
                     android:id="@+id/text_item_data"
                     android:layout_width="wrap_content"
-                    tools:text="text"
-                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
-                    android:layout_marginLeft="8dp" />
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/black"
+                    tools:text="text" />
 
                 <ImageView
                     android:id="@+id/image_item"
@@ -44,19 +44,35 @@
 
             <TextView
                 android:id="@+id/other_info"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/text_item_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:textColor="@color/black"
-                android:layout_gravity="end|center_vertical"
-                android:textSize="40sp" />
+                android:layout_weight="1"
+                android:textColor="@color/black" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_item_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    tools:text="465"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/description_forThreeHours"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="ddd2" />
+            </FrameLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
