@@ -101,9 +101,10 @@ public class InformationActivity extends AppCompatActivity {
         textspeed.setText(String.format("%.0f", weather.wind.speed) + "m/s");
         textPressure.setText(String.format("%.0f", weather.main.pressure) + "hpa");
 
-        Date dateSunrise = new Date(weather.sys.sunrise * 1000);
-        Date dateSunset = new Date(weather.sys.sunset * 1000);
+        Date dateSunrise = new Date((long)weather.sys.sunrise * 1000);
+        Date dateSunset = new Date((long)weather.sys.sunset * 1000);
         SimpleDateFormat sdfSun = new SimpleDateFormat("HH:mm:ss");
+//        sdfSun.setTimeZone(TimeZone.getDefault());
         sunrise.setText(sdfSun.format(dateSunrise));
         sunset.setText(sdfSun.format(dateSunset));
 

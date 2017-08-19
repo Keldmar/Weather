@@ -15,9 +15,7 @@ import com.yahnenko.app.weather.response.forecast.WeatherForThreeHours;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by Yazon on 08.07.2017.
- */
+
 
 public class ViewHolderForThree extends RecyclerView.ViewHolder {
     private TextView data;
