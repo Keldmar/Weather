@@ -10,9 +10,6 @@ import com.yahnenko.app.weather.response.forecast.WeatherForThreeHours;
 
 import java.util.List;
 
-/**
- * Created by Yazon on 08.07.2017.
- */
 
 public class NormalRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolderForThree>  {
 
