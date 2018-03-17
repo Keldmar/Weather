@@ -174,15 +174,7 @@ public class InformationActivity extends AppCompatActivity {
 
             }
         });
-//test recyclerview
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(InformationActivity.this, ShowForecastActivity.class);
-//                intent.putExtra("name", weather.name);
-//                startActivity(intent);
-//            }
-//        });
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,14 +217,4 @@ public class InformationActivity extends AppCompatActivity {
         return image;
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_information, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        return super.onOptionsItemSelected(item);
-//    }
 }

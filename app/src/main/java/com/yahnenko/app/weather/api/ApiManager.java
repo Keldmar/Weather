@@ -1,5 +1,7 @@
 package com.yahnenko.app.weather.api;
 
+import android.util.Log;
+
 import com.google.gson.GsonBuilder;
 import com.yahnenko.app.weather.Openweathermap;
 import com.yahnenko.app.weather.response.forecast.Forecast;
@@ -16,7 +18,12 @@ import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class ApiManager {
 
@@ -52,10 +59,20 @@ public class ApiManager {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().create()))
                 .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
 
         service = retrofit.create(Openweathermap.class);
+
+        Observable<GetWeather> city = service.getweatherRx("Poltava");
+
+        city.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(weatherData -> {
+                    Log.e("Current Weather", weatherData.base);
+                });
     }
 
     public Call<GetWeather> getweather(String cityname) {
